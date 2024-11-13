@@ -1,0 +1,315 @@
+/* Estilo de la barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo-imagen {
+  width: 50px; /* Ajusta el ancho según necesites */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 15px;
+}
+
+.navbar .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* Configuración general */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+/* MENU INTERACTIVO */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.menu-item {
+  text-align: center;
+}
+
+.menu-item button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+.menu-item img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item button:hover img {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.menu-item .nuevo {
+  color: #ff4500;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+
+
+.iphones16 {
+  width: 100%;
+  height: 600px;
+  background-image: url('/Recursos/Imagenes/iPhone_16Pro.png');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+ /* CATALOGO */
+ .catalogo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 columnas */
+  grid-template-rows: repeat(2, auto);    /* 2 filas, ajusta según sea necesario */
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.catalogo__producto {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.catalogo__producto:hover {
+  transform: scale(1.05);
+}
+
+.catalogo__producto img {
+  width: 100%;
+  height: auto;
+  max-height: 250px; /* Ajusta el tamaño máximo de la imagen */
+  object-fit: contain;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.catalogo__producto h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+
+.catalogo__producto data {
+  font-size: 16px;
+  color: #555;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Header */
+.titulo {
+  background: linear-gradient(to right, #333, transparent);
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+/* Secciones de Información, Catálogo y Búsqueda */
+.info, .catalogo, .acciones {
+  text-align: center;
+  padding: 20px;
+}
+
+.link-info, .btn-catalogo {
+  text-decoration: none;
+  color: white;
+  background-color: #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.link-info:hover, .btn-catalogo:hover {
+  background-color: #0056b3;
+}
+
+#textoBusqueda {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 70%;
+  max-width: 300px;
+  margin-right: 10px;
+}
+
+#botonFiltrar {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+#botonFiltrar:hover {
+  background-color: #0056b3;
+}
+
+/* Contenedor de productos */
+#contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.producto-item {
+  flex: 1 1 200px;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.producto-imagen {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Caja degradada */
+.box-gradiente {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to right, #000, transparent);
+  margin: 20px 0;
+}
+            /* VIDEO */
+.video {
+  width: 100%;           /* Ancho completo de la pantalla */
+  height: 400px;      
+  object-fit: cover;     /* Asegura que el video cubra todo el espacio sin distorsionarse */
+  transition: transform 0.3s ease;  /* Transición para el efecto de hover */
+}
+
+/* Efecto de hover para achicar el video */
+.video:hover {
+  transform: scale(0.95);  /* Reduce el tamaño al 95% */
+  border-radius: 20px;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-info p {
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-links li a:hover {
+  color: #007bff;
+}
+
+/* Ícono de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.whatsapp-float img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.whatsapp-float:hover img {
+  transform: scale(1.1);
+}
