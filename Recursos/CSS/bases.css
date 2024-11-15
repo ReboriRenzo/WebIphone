@@ -177,6 +177,12 @@ body, html {
   gap: 20px;
 }
 
+.footer-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 /* Ajuste de columnas en el footer para dispositivos móviles */
 @media (max-width: 600px) {
   .footer-links {
