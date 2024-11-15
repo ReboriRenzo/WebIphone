@@ -1,4 +1,14 @@
-/* Estilo de la barra de navegación */
+/* Estilos generales */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+  overflow-x: hidden; /* Evita scroll horizontal en dispositivos móviles */
+}
+
+/* Barra de navegación */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -10,9 +20,10 @@
   top: 0;
   z-index: 100;
 }
+
 .logo-imagen {
-  width: 50px; /* Ajusta el ancho según necesites */
-  height: auto; /* Mantiene la proporción de la imagen */
+  width: 50px;
+  height: auto;
   border-radius: 15px;
 }
 
@@ -45,21 +56,15 @@
   border-radius: 5px;
 }
 
-/* Configuración general */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f3f3f3;
-  color: #333;
+/* Adaptación de la barra de navegación para dispositivos móviles */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
-h1 {
-  color: #333;
-  text-align: center;
-}
-
-/* MENU INTERACTIVO */
+/* Estilo del menú interactivo */
 .menu {
   display: flex;
   justify-content: center;
@@ -97,33 +102,24 @@ h1 {
   color: #333;
 }
 
-.menu-item .nuevo {
-  color: #ff4500;
-  font-weight: bold;
-  font-size: 12px;
+/* Ajustes de tamaño para móviles */
+@media (max-width: 768px) {
+  .menu {
+    flex-wrap: wrap;
+  }
 }
 
-
-
-.iphones16 {
-  width: 100%;
-  height: 600px;
-  background-image: url('/Recursos/Imagenes/iPhone_16Pro.png');
-  background-size: cover;
-  background-attachment: fixed;
-}
-
- /* CATALOGO */
- .catalogo {
+/* Estilo del catálogo */
+.catalogo {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  /* 3 columnas */
-  grid-template-rows: repeat(2, auto);    /* 2 filas, ajusta según sea necesario */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Estilo del producto en el catálogo */
 .catalogo__producto {
   background-color: #f8f8f8;
   border-radius: 8px;
@@ -140,35 +136,92 @@ h1 {
 .catalogo__producto img {
   width: 100%;
   height: auto;
-  max-height: 250px; /* Ajusta el tamaño máximo de la imagen */
+  max-height: 250px;
   object-fit: contain;
   margin-bottom: 15px;
   border-radius: 8px;
 }
 
-.catalogo__producto h3 {
-  font-size: 18px;
-  color: #333;
-  margin: 0;
+/* Responsive para dispositivos móviles */
+@media (max-width: 768px) {
+  .catalogo {
+    grid-template-columns: 1fr;
+  }
 }
 
-.catalogo__producto data {
-  font-size: 16px;
-  color: #555;
-  font-weight: bold;
-  display: block;
-  margin-top: 10px;
+/* Video */
+.video {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-/* Header */
-.titulo {
-  background: linear-gradient(to right, #333, transparent);
-  padding: 20px;
+.video:hover {
+  transform: scale(0.95);
+  border-radius: 20px;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
   color: white;
+  padding: 20px 0;
   text-align: center;
 }
 
-/* Secciones de Información, Catálogo y Búsqueda */
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Ajuste de columnas en el footer para dispositivos móviles */
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+  }
+}
+
+/* Icono de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+/* Icono de WhatsApp */
+.whatsapp-float img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.whatsapp-float:hover img {
+  transform: scale(1.1);
+}
+
+/* Texto y secciones */
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+/* Caja degradada */
+.box-gradiente {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to right, #000, transparent);
+  margin: 20px 0;
+}
+
+/* Ajuste de texto en secciones */
 .info, .catalogo, .acciones {
   text-align: center;
   padding: 20px;
@@ -188,6 +241,7 @@ h1 {
   background-color: #0056b3;
 }
 
+/* Campo de búsqueda */
 #textoBusqueda {
   padding: 10px;
   border: 1px solid #ddd;
@@ -210,106 +264,4 @@ h1 {
 
 #botonFiltrar:hover {
   background-color: #0056b3;
-}
-
-/* Contenedor de productos */
-#contenedor {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.producto-item {
-  flex: 1 1 200px;
-  max-width: 220px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.producto-imagen {
-  width: 100px;
-  height: auto;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-/* Caja degradada */
-.box-gradiente {
-  width: 100%;
-  height: 100px;
-  background: linear-gradient(to right, #000, transparent);
-  margin: 20px 0;
-}
-            /* VIDEO */
-.video {
-  width: 100%;           /* Ancho completo de la pantalla */
-  height: 400px;      
-  object-fit: cover;     /* Asegura que el video cubra todo el espacio sin distorsionarse */
-  transition: transform 0.3s ease;  /* Transición para el efecto de hover */
-}
-
-/* Efecto de hover para achicar el video */
-.video:hover {
-  transform: scale(0.95);  /* Reduce el tamaño al 95% */
-  border-radius: 20px;
-}
-
-.footer {
-  background-color: #333;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.footer-info p {
-  margin-bottom: 10px;
-}
-
-.footer-links {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.footer-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.footer-links li a:hover {
-  color: #007bff;
-}
-
-/* Ícono de WhatsApp */
-.whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 20px;
-  right: 20px;
-  z-index: 100;
-}
-
-.whatsapp-float img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s;
-}
-
-.whatsapp-float:hover img {
-  transform: scale(1.1);
 }
